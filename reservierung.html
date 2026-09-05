@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Reservierung</title>
+</head>
+<body>
+    <header>
+        <img src="images/" alt="Hazar-Café" width="350">
+
+        <button class="menu-toggle" aria-label="Menü öffnen">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="speisekarte.html">Speisekarte</a>
+            <a href="galerie.html">Galerie</a>
+            <a href="aboutUs.html">Über uns</a>
+            <a href="kontakt.html">Kontakt</a>
+            <a href="reservierung.html" class="nav-button active">Reservieren</a>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="page-hero">
+            <div>
+                <span class="section-label">RESERVIERUNG</span>
+                
+                <h1>Dein Tisch wartet</h1>
+                <p>Reserviere deinen Tisch und genieße eine entspannte Zeit im Hazar-Café</p>
+            </div>
+        </section>
+
+
+        <section class="reservation-page">
+            <div class="reservation-info">
+                <span class="section-label">TISCH RESERVIEREN</span>
+
+                <h2>Wir freuen uns auf dich</h2>
+
+                <p>Fülle einfach das Formular aus und sende uns deine Reservierungsanfrage</p>
+
+
+                <div class="reservation-details">
+                    <div>
+                        <i class="fa-regular fa-clock"></i>
+
+                        <div>
+                            <h3>Öffnungszeiten</h3>
+                            <p>
+                                Montag – Freitag<br>
+                                08:00 – 18:00 Uhr
+                            </p>
+                            <p>
+                                Samstag – Sonntag<br>
+                                09:00 – 18:00 Uhr
+                            </p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-phone"></i>
+
+                        <div>
+                            <h3>Telefon</h3>
+                            <p>+43 123 456789</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="contact-form-card">
+                <h2>Reservierung anfragen</h2>
+
+                <p>Wir melden uns so schnell wie möglich bei dir</p>
+
+
+                <form action="#" method="POST">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Dein Name" required>
+
+                    <label for="email">E-Mail</label>
+                    <input type="email" id="email" name="email" placeholder="deine@email.at" required>
+
+                    <label for="phone">Telefon</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+43..." required>
+
+                    <label for="date">Datum</label>
+                    <input type="date" id="date" name="date" required>
+
+                    <label for="time">Uhrzeit</label>
+                    <input type="time" id="time" name="time" required>
+
+
+                    <label for="persons">Personen</label>
+
+                    <select id="persons" name="persons" required>
+                        <option value="">Bitte auswählen</option>
+                        <option value="1">1 Person</option>
+                        <option value="2">2 Personen</option>
+                        <option value="3">3 Personen</option>
+                        <option value="4">4 Personen</option>
+                        <option value="5">5 Personen</option>
+                        <option value="6">6 Personen</option>
+                        <option value="7">7 Personen</option>
+                        <option value="8">8 Personen</option>
+                    </select>
+
+
+                    <label for="message">Nachricht</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Hast du besondere Wünsche?"></textarea>
+
+                    <label class="privacy-check">
+                        <input type="checkbox" required>
+
+                        <span>
+                            Ich habe die
+                            <a href="datenschutz.html">
+                                Datenschutzerklärung
+                            </a>
+                            zur Kenntnis genommen.
+                        </span>
+                    </label>
+
+
+                    <button type="submit" class="btn">
+                        Reservierung senden
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+        </section>  
+    </main>
+
+
+    <div id="footer"></div>
+    <script src="script.js"></script>
+</body>
+</html>
