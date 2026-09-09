@@ -2,27 +2,57 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 :root {
-    --primary: #4f7f5f;
-    --primary-dark: #315b40;
-    --primary-light: #dce8dc;
+    --primary: #557a5d;
+    --primary-dark: #34533d;
+    --primary-light: #dfe9df;
 
-    --bg: #f5f4ed;
+    --bg: #f6f3ed;
+    --bg-soft: #edf2ea;
+
     --white: #ffffff;
 
     --text: #26352b;
-    --muted: #68736b;
 
-    --border: #d9e0d8;
+    --muted: #6d756e;
+    --border: #dce2da;
+
+    --brown: #30251f;
+    --brown-light: #6e5a4d;
+
+    --shadow: 0 10px 30px rgba(38, 53, 43, 0.08);
+    --shadow-hover: 0 16px 40px rgba(38, 53, 43, 0.13);
+    --radius: 16px;
 }
 
 body {
     background: var(--bg);
     color: var(--text);
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+button, input,
+textarea, select {
+    font: inherit;
+}
+
+::selection {
+    background: var(--primary-light);
+    color: var(--primary-dark);
 }
 
 
@@ -36,30 +66,42 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 18px 6%;
-    background: rgba(255,255,255,0.96);
+    min-height: 78px;
+    padding: 14px 6%;
+    background: rgba(255,255,255,0.97);
     border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(10px);
 }
 
 .logo {
-    color: var(--primary-dark);
-    text-decoration: none;
-    font-size: 25px;
-    font-weight: 700;
+    width: 180px;
+    height: auto;
+    object-fit: contain;
 }
 
 nav {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 28px;
 }
 
 nav a {
+    position: relative;
     color: var(--text);
-    text-decoration: none;
     font-size: 15px;
     font-weight: 600;
-    transition: 0.2s ease;
+    transition: 0.25s ease;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.25s ease;
 }
 
 nav a:hover,
@@ -67,19 +109,34 @@ nav a.active {
     color: var(--primary);
 }
 
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
+}
+
 .nav-button {
-    padding: 11px 18px;
+    padding: 11px 19px;
     background: var(--primary);
     color: white !important;
-    border-radius: 7px;
+    border-radius: 8px;
+}
+
+.nav-button::after {
+    display: none;
+}
+
+.nav-button:hover {
+    background: var(--primary-dark);
 }
 
 .menu-toggle {
     display: none;
     border: none;
+    padding: 7px;
     background: transparent;
     color: var(--primary-dark);
     font-size: 25px;
+    cursor: pointer;
 }
 
 
@@ -87,18 +144,17 @@ nav a.active {
    HERO
 ========================= */
 .hero {
-    padding: 70px 6% 80px;
-
+    padding: 85px 6% 90px;
     background:
         linear-gradient(
             135deg,
-            #eef3eb,
-            #f5f4ed
+            #eef3eb 0%,
+            #f7f4ee 100%
         );
 }
 
 .hero-content {
-    max-width: 900px;
+    max-width: 850px;
     margin: auto;
     text-align: center;
 }
@@ -111,16 +167,18 @@ nav a.active {
     display: block;
     margin-bottom: 15px;
     color: var(--primary);
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: 2.5px;
 }
 
 .hero h1 {
     margin-bottom: 25px;
-    font-size: clamp(42px, 6vw, 72px);
-    line-height: 1.05;
     color: var(--text);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(44px, 6vw, 72px);
+    font-weight: 700;
+    line-height: 1.05;
 }
 
 .hero h1 span {
@@ -132,6 +190,7 @@ nav a.active {
     margin: auto;
     color: var(--muted);
     font-size: 18px;
+    line-height: 1.7;
 }
 
 .hero-image {
@@ -139,45 +198,26 @@ nav a.active {
     height: 480px;
     margin: 55px auto 0;
     overflow: hidden;
-    border-radius: 18px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
 }
 
 .hero-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.hero-image:hover img {
+    transform: scale(1.03);
 }
 
 .hero-buttons {
     display: flex;
     justify-content: center;
     gap: 12px;
-    margin-top: 30px;
-}
-
-
-/* =========================
-   SEITEN-HEADER
-========================= */
-.page-hero {
-    padding: 90px 20px;
-    text-align: center;
-    background: #f7f3ef;
-}
-
-.page-hero > div {
-    max-width: 750px;
-    margin: auto;
-}
-
-.page-hero h1 {
-    margin: 12px 0;
-    font-size: 48px;
-}
-
-.page-hero p {
-    color: var(--muted);
-    line-height: 1.7;
+    margin-top: 32px;
 }
 
 
@@ -189,25 +229,31 @@ nav a.active {
     align-items: center;
     justify-content: center;
     gap: 9px;
-    padding: 14px 24px;
+    padding: 13px 23px;
     background: var(--primary);
     color: white;
     border: 2px solid var(--primary);
-    border-radius: 8px;
-    text-decoration: none;
+    border-radius: 9px;
     font-weight: 700;
-    transition: 0.25s ease;
+    box-shadow: 0 5px 15px rgba(85, 122, 93, 0.15);
+    transition: 
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .btn:hover {
     background: var(--primary-dark);
     border-color: var(--primary-dark);
     transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(52, 83, 61, 0.18);
 }
 
 .btn-outline {
     background: transparent;
     color: var(--primary-dark);
+    box-shadow: none;
 }
 
 .btn-outline:hover {
@@ -230,12 +276,41 @@ section {
 
 .section-heading h2 {
     margin-bottom: 15px;
+    font-family: Georgia, "Times New Roman", serif;
     font-size: 38px;
     line-height: 1.2;
 }
 
 .section-heading p {
     color: var(--muted);
+    line-height: 1.7;
+}
+
+
+/* =========================
+   SEITEN-HEADER
+========================= */
+.page-hero {
+   padding: 90px 20px;
+    text-align: center;
+    background: #f3eee7;
+}
+
+.page-hero > div {
+    max-width: 750px;
+    margin: auto;
+}
+
+.page-hero h1 {
+    margin: 12px 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 48px;
+    line-height: 1.1;
+}
+
+.page-hero p {
+    color: var(--muted);
+    line-height: 1.7;
 }
 
 
@@ -254,17 +329,24 @@ section {
 .about-image {
     height: 480px;
     overflow: hidden;
-    border-radius: 18px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
 }
 
 .about-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.03);
 }
 
 .about-content h2 {
     margin-bottom: 20px;
+    font-family: Georgia, "Times New Roman", serif;
     font-size: 42px;
     line-height: 1.15;
 }
@@ -272,6 +354,7 @@ section {
 .about-content p {
     margin-bottom: 15px;
     color: var(--muted);
+    line-height: 1.8;
 }
 
 .text-link {
@@ -280,8 +363,12 @@ section {
     gap: 8px;
     margin-top: 15px;
     color: var(--primary-dark);
-    text-decoration: none;
     font-weight: 700;
+    transition: color 0.2s ease;
+}
+
+.text-link:hover {
+    color: var(--primary);
 }
 
 
@@ -289,7 +376,7 @@ section {
    SPEISEKARTE
 ========================= */
 .menu-section {
-    background: white;
+    background: var(--white);
 }
 
 .menu-grid {
@@ -305,13 +392,13 @@ section {
     text-align: center;
     background: var(--bg);
     border: 1px solid var(--border);
-    border-radius: 14px;
-    transition: 0.25s ease;
+    border-radius: var(--radius);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .menu-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(40,70,50,0.10);
+    box-shadow: var(--shadow-hover);
 }
 
 .menu-icon {
@@ -322,6 +409,8 @@ section {
 
 .menu-card h3 {
     margin-bottom: 10px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 21px;
 }
 
 .menu-card p {
@@ -356,6 +445,7 @@ section {
 
 .menu-item h3 {
     margin-bottom: 6px;
+    font-family: Georgia, "Times New Roman", serif;
 }
 
 .menu-item p {
@@ -364,7 +454,7 @@ section {
 }
 
 .menu-item > span {
-    font-weight: 600;
+    font-weight: 700;
     color: var(--primary);
     white-space: nowrap;
 }
@@ -384,6 +474,7 @@ section {
 
 .special-content h2 {
     margin-bottom: 20px;
+    font-family: Georgia, "Times New Roman", serif;
     font-size: 45px;
     line-height: 1.1;
 }
@@ -392,18 +483,25 @@ section {
     max-width: 500px;
     margin-bottom: 25px;
     color: var(--muted);
+    line-height: 1.8;
 }
 
 .special-image {
     height: 450px;
     overflow: hidden;
-    border-radius: 18px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
 }
 
 .special-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.special-image:hover img {
+    transform: scale(1.03);
 }
 
 
@@ -411,7 +509,7 @@ section {
    GALERIE
 ========================= */
 .gallery-section {
-    background: #edf2ea;
+    background: var(--bg-soft);
 }
 
 .gallery-grid {
@@ -427,7 +525,13 @@ section {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 13px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.015);
+    filter: brightness(0.95);
 }
 
 .gallery-grid img:first-child {
@@ -449,6 +553,13 @@ section {
 .advantage-card {
     padding: 30px 20px;
     text-align: center;
+    border-radius: var(--radius);
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.advantage-card:hover {
+    background: white;
+    transform: translateY(-4px);
 }
 
 .advantage-card i {
@@ -459,6 +570,7 @@ section {
 
 .advantage-card h3 {
     margin-bottom: 10px;
+    font-family: Georgia, "Times New Roman", serif;
 }
 
 .advantage-card p {
@@ -473,11 +585,18 @@ section {
 .reservation-section {
     max-width: 1100px;
     margin: 30px auto;
-    padding: 60px;
+    padding: 65px 40px;
     background: var(--primary-dark);
     color: white;
-    border-radius: 18px;
+    border-radius: 20px;
     text-align: center;
+    box-shadow: var(--shadow);
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary-dark),
+            #263f2e
+        );
 }
 
 .reservation-section span {
@@ -486,18 +605,27 @@ section {
 
 .reservation-section h2 {
     margin-bottom: 15px;
+    font-family: Georgia, "Times New Roman", serif;
     font-size: 40px;
+    line-height: 1.2;
 }
 
 .reservation-section p {
-    margin-bottom: 25px;
-    opacity: 0.85;
+    max-width: 600px;
+    margin: 0 auto 25px;
+    opacity: 0.88;
 }
 
 .reservation-section .btn {
     background: white;
     color: var(--primary-dark);
     border-color: white;
+    box-shadow: none;
+}
+
+.reservation-section .btn:hover {
+    background: var(--primary-light);
+    border-color: var(--primary-light);
 }
 
 .reservation-page {
@@ -511,11 +639,13 @@ section {
 
 .reservation-info h2 {
     margin: 10px 0 15px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 36px;
 }
 
 .reservation-info > p {
     color: var(--muted);
-    line-height: 1.7;
+    line-height: 1.8;
 }
 
 .reservation-details {
@@ -539,6 +669,7 @@ section {
 
 .reservation-details h3 {
     margin-bottom: 6px;
+    font-family: Georgia, "Times New Roman", serif;
 }
 
 .reservation-details p {
@@ -549,10 +680,11 @@ section {
 
 
 /* =========================
-   KONTAKT - Index
+   KONTAKT - Startseite
 ========================= */
 .contact-section {
-    background: white;
+    background: #f8f3ed;
+    padding: 80px 20px;
 }
 
 .contact-grid {
@@ -564,10 +696,17 @@ section {
 }
 
 .contact-card {
-    padding: 30px;
+    padding: 32px 25px;
     text-align: center;
+    background: white;
     border: 1px solid var(--border);
-    border-radius: 14px;
+    border-radius: var(--radius);
+    transition: transform 0.23s ease, box-shadow 0.25s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
 }
 
 .contact-card i {
@@ -577,11 +716,15 @@ section {
 }
 
 .contact-card h3 {
-    margin-bottom: 8px;
+    margin: 10px 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 21px;
 }
 
 .contact-card p {
+    margin: 0;
     color: var(--muted);
+    line-height: 1.7;
 }
 
 
@@ -602,13 +745,15 @@ section {
 .contact-header span,
 .section-heading span {
     color: var(--primary);
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 13px;
+    font-weight: 700;
     letter-spacing: 2px;
 }
 
 .contact-header h1 {
     margin: 10px 0 15px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 44px;
 }
 
 .contact-header p {
@@ -624,7 +769,6 @@ section {
     gap: 50px;
 }
 
-/* Kontaktinformationen */
 .contact-details {
     display: flex;
     flex-direction: column;
@@ -644,13 +788,14 @@ section {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: #f5f5f5;
+    background: var(--primary-light);
     color: var(--primary);
     font-size: 20px;
 }
 
 .contact-detail h3 {
     margin: 0 0 8px;
+    font-family: Georgia, "Times New Roman", serif;
 }
 
 .contact-detail p {
@@ -661,19 +806,24 @@ section {
 
 .contact-detail a {
     color: var(--primary);
-    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
-/* Kontaktformular */
+.contact-detail a:hover {
+    color: var(--primary-dark);
+}
+
 .contact-form-card {
     padding: 35px;
     border: 1px solid var(--border);
-    border-radius: 14px;
+    border-radius: var(--radius);
     background: white;
+    box-shadow: var(--shadow);
 }
 
 .contact-form-card h2 {
     margin-bottom: 8px;
+    font-family: Georgia, "Times New Roman", serif;
 }
 
 .contact-form-card > p {
@@ -688,21 +838,35 @@ section {
 
 .contact-form-card label {
     margin-bottom: 7px;
-    font-weight: 500;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .contact-form-card input,
-.contact-form-card textarea {
+.contact-form-card textarea,
+.contact-form-card select {
     width: 100%;
-    padding: 12px 14px;
+    padding: 13px 14px;
     margin-bottom: 18px;
     border: 1px solid var(--border);
     border-radius: 8px;
+    color: var(--text);
     font-family: inherit;
     font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form-card input:focus,
+.contact-form-card textarea:focus,
+.contact-form-card select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(85, 122, 93, 0.12);
 }
 
 .contact-form-card textarea {
+    min-height: 130px;
     resize: vertical;
 }
 
@@ -710,8 +874,10 @@ section {
     display: flex;
     align-items: flex-start;
     gap: 8px;
+    margin-bottom: 20px;
     font-size: 13px;
     color: var(--muted);
+    line-height: 1.5;
 }
 
 .privacy-check input {
@@ -756,11 +922,13 @@ section {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: #f5f5f5;
-    border-radius: 14px;
+    background: #f0f0ed;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
 }
 
 .map-placeholder i {
+    display: block;
     color: var(--primary);
     font-size: 35px;
     margin-bottom: 15px;
@@ -784,6 +952,7 @@ section {
     margin-top: 40px;
     margin-bottom: 12px;
     text-align: left;
+    font-family: Georgia, "Times New Roman", serif;
 }
 
 .legal-section h2:first-child {
@@ -803,7 +972,7 @@ section {
 ========================= */
 footer {
     padding: 60px 20px 20px;
-    background: #2b211c;
+    background: var(--brown);
     color: white;
 }
 
@@ -817,6 +986,7 @@ footer {
 
 .footer h3 {
     margin-bottom: 12px;
+    font-family: Georgia, "Times New Roman", serif;
 }
 
 .footer h4 {
@@ -832,8 +1002,7 @@ footer a {
     display: block;
     margin-bottom: 10px;
     color: #bbb;
-    text-decoration: none;
-    transition: 0.2s;
+    transition: color 0.2s ease;
 }
 
 footer a:hover {
@@ -848,7 +1017,7 @@ footer a:hover {
     max-width: 1100px;
     margin: 40px auto 0;
     padding-top: 20px;
-    border-top: 1px solid #444;
+    border-top: 1px solid #3b3039;
     text-align: center;
     color: #999;
     font-size: 14px;
@@ -860,6 +1029,10 @@ footer a:hover {
    RESPONSIVE
 ========================= */
 @media (max-width: 1200px) {
+    header {
+        padding: 14px 5%;
+    }
+
     .menu-toggle {
         display: block;
     }
@@ -874,10 +1047,26 @@ footer a:hover {
         background: white;
         flex-direction: column;
         align-items: stretch;
+        gap: 0;
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow);
     }
 
     nav.active {
         display: flex;
+    }
+
+    nav a {
+        padding: 12px 5px;
+    }
+
+    nav a::after {
+        display: none;
+    }
+
+    .nav-button {
+        text-align: center;
+        margin-top: 8px;
     }
 
     .hero-image {
@@ -885,12 +1074,21 @@ footer a:hover {
     }
     
     .page-hero h1 {
-        font-size:  36px;
+        font-size: 36px;
     }
 
     .about-section,
     .special-section {
         grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .about-image {
+        height: 400px;
+    }
+
+    .special-image {
+        height: 400px;
     }
 
     .menu-grid,
@@ -902,7 +1100,7 @@ footer a:hover {
         align-items: flex-start;
     }
 
-    .contact-grid {
+    .contact-grid, .contact-layout {
         grid-template-columns: 1fr;
     }
 
@@ -918,19 +1116,29 @@ footer a:hover {
 
 @media (max-width: 600px) {
     header {
-        padding: 15px 5%;
+        min-height: 70px;
+        padding: 12px 5%;
+    }
+
+    .logo {
+        width: 145px;
     }
 
     .hero {
-        padding: 60px 5%;
+        padding: 60px 5% 65px;
     }
 
     .hero h1 {
         font-size: 43px;
     }
 
+    .hero-content > p {
+        font-size: 16px;
+    }
+
     .hero-buttons {
         flex-direction: column;
+        margin-top: 25px;
     }
 
     .hero-buttons .btn {
@@ -938,7 +1146,9 @@ footer a:hover {
     }
 
     .hero-image {
-        height: 300px;
+        height: 280px;
+        margin-top: 40px;
+        border-radius: 15px;
     }
 
     .page-hero {
@@ -946,16 +1156,21 @@ footer a:hover {
     }
 
     .page-hero h1 {
-        font-size: 30px;
+        font-size: 34px;
     }
 
     .menu-item {
         flex-direction: column;
+        align-items: flex-start;
         gap: 8px;
     }
 
     section {
         padding: 65px 5%;
+    }
+
+    .section-heading {
+        margin-bottom: 35px;
     }
 
     .section-heading h2 {
@@ -979,7 +1194,8 @@ footer a:hover {
 
     .gallery-grid {
         grid-template-columns: 1fr 1fr;
-        grid-auto-rows: 180px;
+        grid-auto-rows: 160px;
+        gap: 10px;
     }
 
     .gallery-grid img:first-child {
@@ -990,10 +1206,31 @@ footer a:hover {
     .reservation-section {
         margin: 10px 5%;
         padding: 45px 25px;
+        border-radius: 16px;
     }
 
     .reservation-section h2 {
         font-size: 30px;
+    }
+
+    .reservation-page {
+        padding: 60px 20px;
+    }
+
+    .contact-section {
+        padding: 65px 5%;
+    }
+
+    .contact-card {
+        padding: 28px 20px;
+    }
+
+    .contact-form-card {
+        padding: 25px 20px;
+    }
+
+    .contact-header h1 {
+        font-size: 35px;
     }
 
     .footer-container {

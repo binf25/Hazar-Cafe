@@ -67,7 +67,10 @@
 
                         <div>
                             <h3>Telefon</h3>
-                            <p>+43 123 456789</p>
+
+                            <a href="tel:+43123456789">
+                                +43 123 456789
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -81,23 +84,11 @@
 
 
                 <form action="#" method="POST">
-                    <label for="name">Name</label>
                     <input type="text" id="name" name="name" placeholder="Dein Name" required>
-
-                    <label for="email">E-Mail</label>
                     <input type="email" id="email" name="email" placeholder="deine@email.at" required>
-
-                    <label for="phone">Telefon</label>
                     <input type="tel" id="phone" name="phone" placeholder="+43..." required>
-
-                    <label for="date">Datum</label>
                     <input type="date" id="date" name="date" required>
-
-                    <label for="time">Uhrzeit</label>
                     <input type="time" id="time" name="time" required>
-
-
-                    <label for="persons">Personen</label>
 
                     <select id="persons" name="persons" required>
                         <option value="">Bitte auswählen</option>
@@ -111,8 +102,6 @@
                         <option value="8">8 Personen</option>
                     </select>
 
-
-                    <label for="message">Nachricht</label>
                     <textarea id="message" name="message" rows="5" placeholder="Hast du besondere Wünsche?"></textarea>
 
                     <label class="privacy-check">
@@ -130,7 +119,6 @@
 
                     <button type="submit" class="btn">
                         Reservierung senden
-                        <i class="fa-solid fa-arrow-right"></i>
                     </button>
                 </form>
             </div>

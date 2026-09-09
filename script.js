@@ -24,26 +24,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('header nav');
-const dropdownToggle = document.querySelector('.dropdown-toggle');
-const megaMenu = document.querySelector('.mega-menu');
 
 /* Hamburger-Menü */
 if (menuToggle && nav) {
-    menuToggle.addEventListener('click', () => {
-        nav.classList.toggle('active');
+    menuToggle.addEventListener("click", () => {
+        const isOpen = nav.classList.toggle("active");
 
-        if (nav.classList.contains('active')) {
-            menuToggle.textContent = '✕';
-            menuToggle.setAttribute('aria-label', 'Menü schließen');
-        } 
-        else {
-            menuToggle.textContent = '☰';
-            menuToggle.setAttribute('aria-label', 'Menü öffnen');
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen ? "Menü schließen" : "Menü öffnen"
+        );
 
-            // Produkte-Untermenü beim Schließen zurücksetzen
-            if (megaMenu) {
-                megaMenu.style.display = 'none';
-            }
-        }
+        menuToggle.innerHTML = isOpen
+            ? '<i class="fa-solid fa-xmark"></i>'
+            : '<i class="fa-solid fa-bars"></i>';
     });
 }
