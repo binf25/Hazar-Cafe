@@ -26,39 +26,52 @@
     </header>
 
     <main>
+        <!-- HERO-BEREICH -->
         <section class="page-hero">
-            <div class="contact-header">
+            <div>
                 <span class="section-label">KONTAKT</span>
 
-                <h1>Komm gerne vorbei</h1>
+                <h1>Wir sind für dich da!</h1>
 
-                <p>Du hast Fragen, möchtest einen Tisch reservieren oder möchtest einfach mehr über unser Café erfahren?
-                    Wir freuen uns auf deine Nachricht
+                <p>Du hast Fragen, möchtest einen Tisch reservieren oder mehr über unser Café erfahren?
+                    Schreibe uns gerne oder besuche uns direkt vor Ort. 
+                    Wir helfen dir gerne weiter!
                 </p>
-            </div>
 
-            <div class="contact-layout">
-                <!-- KONTAKTINFORMATIONEN -->
+                <p>Kontaktiere uns telefonisch, per E-Mail oder direkt bei uns im Café.</p>
+            </div>
+        </section>
+
+
+        <!-- KONTAKTINFORMATIONEN UND FORMULAR -->
+        <section class="contact-page">
+            <div class="contact-info">
                 <div class="contact-details">
-                    <div class="contact-detail">
-                        <div class="contact-icon">
-                            <i class="fa-solid fa-location-dot"></i>
-                        </div>
+                    <!-- ADRESSE -->
+                    <div>
+                        <i class="fa-solid fa-location-dot"></i>
 
                         <div>
-                            <h3>Adresse</h3>
+                            <h3>Besuche uns</h3>
 
                             <p>
-                                Musterstraße 12<br>
-                                1010 Wien
+                                Favoritenstraße 79<br>
+                                1100 Wien
                             </p>
+
+                            <a href="https://www.google.com/maps/search/?api=1&query=Favoritenstraße+79+1100+Wien"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                Standort ansehen
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
                         </div>
                     </div>
 
-                    <div class="contact-detail">
-                        <div class="contact-icon">
-                            <i class="fa-regular fa-clock"></i>
-                        </div>
+                    
+                    <!-- ÖFFNUNGSZEITEN -->
+                    <div>
+                        <i class="fa-regular fa-clock"></i>
 
                         <div>
                             <h3>Öffnungszeiten</h3>
@@ -67,7 +80,6 @@
                                 Montag – Freitag<br>
                                 08:00 – 18:00 Uhr
                             </p>
-
                             <p>
                                 Samstag – Sonntag<br>
                                 09:00 – 18:00 Uhr
@@ -75,13 +87,13 @@
                         </div>
                     </div>
 
-                    <div class="contact-detail">
-                        <div class="contact-icon">
-                            <i class="fa-solid fa-phone"></i>
-                        </div>
+
+                    <!-- TELEFON -->
+                    <div>
+                        <i class="fa-solid fa-phone"></i>
 
                         <div>
-                            <h3>Telefon</h3>
+                            <h3>Ruf uns an</h3>
 
                             <a href="tel:+43123456789">
                                 +43 123 456789
@@ -89,61 +101,74 @@
                         </div>
                     </div>
 
-                    <div class="contact-detail">
-                        <div class="contact-icon">
-                            <i class="fa-regular fa-envelope"></i>
-                        </div>
+
+                    <!-- E-MAIL -->
+                    <div>
+                        <i class="fa-regular fa-envelope"></i>
 
                         <div>
-                            <h3>E-Mail</h3>
+                            <h3>Schreib uns</h3>
 
-                            <a href="mailto:hallo@cafe-gruenblatt.at">
-                                hallo@cafe-gruenblatt.at
+                            <a href="mailto:office@hazar-cafe.at">
+                                office@hazar-cafe.at
                             </a>
                         </div>
                     </div>
                 </div>
+            </div>
 
 
-                <!-- KONTAKTFORMULAR -->
-                <div class="contact-form-card">
-                    <h2>Schreib uns gerne</h2>
-                    <p>Wir melden uns so schnell wie möglich bei dir</p>
+            <!-- KONTAKTFORMULAR -->
+            <div class="contact-form-card">
+                <h2>Schreib uns eine Nachricht</h2>
+                <p>Wir freuen uns über deine Nachricht und melden uns so schnell wie möglich bei dir</p>
 
-                    <form action="#" method="POST">
-                        <input type="text" id="name" name="name" placeholder="Dein Name" required>
-                        <input type="email" id="email" name="email" placeholder="deine@email.at" required>
+                <form id="contactForm">
+                    <input type="text" id="name" name="name" placeholder="Vor- und Nachname" required>
+                    <input type="email" id="email" name="email" placeholder="deine@email.at" required>
 
-                        <textarea id="message" name="message" rows="6" placeholder="Wie können wir dir helfen?" required></textarea>
+                    <select id="subject" name="subject" required>
+                        <option value="" disabled selected>Bitte auswählen</option>
+                        <option value="Allgemeine Anfrage">Allgemeine Anfrage</option>
+                        <option value="Reservierung">Reservierung</option>
+                        <option value="Feedback">Feedback</option>
+                        <option value="Sonstiges">Sonstiges</option>
+                    </select>
 
-                        <label class="privacy-check">
-                            <input type="checkbox" required>
+                    <textarea id="message" name="message" rows="6" placeholder="Wie können wir dir helfen?" required></textarea>
 
-                            <span>Ich habe die
-                                <a href="datenschutz.html">
-                                    Datenschutzerklärung
-                                </a>
-                                zur Kenntnis genommen.
-                            </span>
-                        </label>
+                    <label class="privacy-check">
+                        <input type="checkbox" id="contactPrivacy" name="privacy" required>
 
-                        <button type="submit" class="btn">
-                            Nachricht senden
-                        </button>
-                    </form>
-                </div>
+                        <span>Ich habe die
+                            <a href="datenschutz.html">
+                                Datenschutzerklärung
+                            </a>
+                            zur Kenntnis genommen.
+                        </span>
+                    </label>
+
+                    <button type="submit" class="btn">
+                        Nachricht senden
+                    </button>
+
+                    <p id="contactStatus" aria-live="polite"></p>
+                </form>
             </div>
         </section>
+        
 
-
-        <!-- =========================
-            MAP / LOCATION
-        ========================== -->
+        <!-- STANDORT -->
         <section class="location-section">
             <div class="section-heading">
                 <span>SO FINDEST DU UNS</span>
 
-                <h2>Mitten in der Stadt</h2>
+                <h2>Besuche uns im Hazar-Café</h2>
+
+                <p>
+                    Genieße eine kleine Auszeit, guten Kaffee und eine gemütliche Atmosphäre.
+                    Wir freuen uns auf deinen Besuch!
+                </p>
             </div>
 
             <div class="map-placeholder">
@@ -151,10 +176,17 @@
                     <i class="fa-solid fa-location-dot"></i>
 
                     <h3>Hazar-Café</h3>
+                    <p>Favoritenstraße 79 · 1100 Wien</p>
 
-                    <p>Musterstraße 12 · 1100 Wien</p>
-
-                    <a href="#" class="btn">Route planen</a>
+                    <a 
+                        href="https://www.google.com/maps/dir/?api=1&destination=Favoritenstraße+79+1100+Wien"
+                        class="btn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >
+                        <i class="fa-solid fa-diamond-turn-right"></i>
+                        Route planen
+                    </a>
                 </div>
             </div>
         </section>
