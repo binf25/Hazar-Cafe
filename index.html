@@ -9,17 +9,18 @@
 </head>
 <body>
     <header>
-        <img src="images/" alt="Hazar-Café" class="logo">
+        <img src="images/logo.jpeg" alt="Hazar-Café" class="logo">
 
-        <button class="menu-toggle" aria-label="Menü öffnen"> 
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Menü öffnen" aria-expanded="false">
             <i class="fa-solid fa-bars"></i>
         </button>
 
-        <nav>
-            <a href="index.html" class="active">Home</a>
+        <nav id="mainNav">
+            <a href="index.html" class="active">Startseite</a>
             <a href="speisekarte.html">Speisekarte</a>
             <a href="galerie.html">Galerie</a>
-            <a href="aboutUs.html">Über Uns</a>
+            <a href="aboutUs.html">Über uns</a>
+            <a href="bestellen.html">Bestellen</a>
             <a href="kontakt.html">Kontakt</a>
             <a href="reservierung.html" class="nav-button">Reservieren</a>
         </nav>
@@ -85,57 +86,49 @@
                 <span>UNSERE SPEISEKARTE</span>
 
                 <h2>Etwas Leckeres für jeden Moment</h2>
-                <p>Von frisch gebrühtem Kaffee bis zu hausgemachten Kuchen</p>
+                <p>Von hausgemachten Torten und traditionellen türkischen Süßspeisen bis zu frischem Gebäck und köstlichen Getränken</p>
             </div>
 
             <div class="menu-grid">
                 <div class="menu-card">
                     <div class="menu-icon">
-                        <i class="fa-solid fa-mug-hot"></i>
-                    </div>
-
-                    <h3>Kaffee</h3>
-                    <p>Espresso, Cappuccino, Latte Macchiato und vieles mehr</p>
-
-                    <span>ab € 2,90</span>
-                </div>
-
-                <div class="menu-card">
-                    <div class="menu-icon">
                         <i class="fa-solid fa-cake-candles"></i>
                     </div>
 
-                    <h3>Kuchen & Torten</h3>
-                    <p>Hausgemachte Kuchen und wechselnde saisonale Spezialitäten</p>
-
-                    <span>ab € 3,50</span>
+                    <h3>Torten & Kuchen</h3>
+                    <p>Hausgemachte Torten und Kuchen für jeden Anlass</p>
                 </div>
 
                 <div class="menu-card">
                     <div class="menu-icon">
-                        <i class="fa-solid fa-bread-slice"></i>
+                        <i class="fa-solid fa-cookie-bite"></i>
                     </div>
 
-                    <h3>Frühstück</h3>
-                    <p>Frisches Brot, Gebäck, Aufstriche und Frühstückskreationen</p>
-
-                    <span>ab € 7,90</span>
+                    <h3>Türkische Süßspeisen</h3>
+                    <p>Traditionelle Desserts und süße Spezialitäten</p>
                 </div>
 
                 <div class="menu-card">
                     <div class="menu-icon">
-                        <i class="fa-solid fa-leaf"></i>
+                        <i class="fa-solid fa-bowl-food"></i>
                     </div>
 
-                    <h3>Getränke</h3>
-                    <p>Hausgemachte Limonaden, Tee und erfrischende Getränke</p>
+                    <h3>Baklava</h3>
+                    <p>Traditionelle Baklava mit Pistazien und Nüssen</p>
+                </div>
 
-                    <span>ab € 2,80</span>
+                <div class="menu-card">
+                    <div class="menu-icon">
+                        <i class="fa-solid fa-mug-hot"></i>
+                    </div>
+
+                    <h3>Getränke & Gebäck</h3>
+                    <p>Frisches Gebäck, Kaffee, Tee und Erfrischungen</p>
                 </div>
             </div>
 
             <div class="center-button">
-                <a href="speisekarte.html" class="btn">Komplette Speisekarte</a>
+                <a href="speisekarte.html" class="btn btn-primary">Gesamte Speisekarte ansehen</a>
             </div>
         </section>
 
@@ -264,9 +257,13 @@
 
                     <h3>Öffnungszeiten</h3>
 
+                     <p>
+                        Montag – Sonntag<br>
+                        07:00 – 22:00 Uhr
+                    </p>
+
                     <p>
-                        Mo – Fr: 08:00 – 18:00<br>
-                        Sa – So: 09:00 – 18:00
+                        Auch an Feiertagen geöffnet!
                     </p>
                 </div>
 
@@ -285,6 +282,6 @@
     </main>
 
     <div id="footer"></div>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

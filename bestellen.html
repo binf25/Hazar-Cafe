@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bestelle individuelle Torten, Baklava und Süßspeisen für Geburtstage, Hochzeiten und besondere Feiern beim Hazar Café.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Bestellung</title>
+</head>
+<body>
+    <header>
+        <img src="images/logo.jpeg" alt="Hazar-Café" class="logo">
+
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Menü öffnen" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav id="mainNav">
+            <a href="index.html">Startseite</a>
+            <a href="speisekarte.html">Speisekarte</a>
+            <a href="galerie.html">Galerie</a>
+            <a href="aboutUs.html">Über uns</a>
+            <a href="bestellen.html" class="active">Bestellen</a>
+            <a href="kontakt.html">Kontakt</a>
+            <a href="reservierung.html" class="nav-button">Reservieren</a>
+        </nav>
+</header>
+
+<main>
+    <!-- HERO-BEREICH -->
+    <section class="page-hero">
+        <div>
+            <span class="hero-label">FÜR BESONDERE MOMENTE</span>
+
+            <h1>Individuelle Bestellungen</h1>
+            <p>Ob Geburtstag, Hochzeit oder Familienfeier – wir bereiten besondere Köstlichkeiten ganz nach deinen Wünschen zu</p>
+        </div>
+    </section>
+
+    <!-- PRODUKT-KATEGORIEN -->
+    <section class="inquiry-intro">
+        <div class="section-heading">
+            <span>UNSERE SPEZIALITÄTEN</span>
+
+            <h2>Für deine besonderen Anlässe</h2>
+            <p>Entdecke unsere Möglichkeiten für deine Feier. Wir freuen uns darauf, deine Wünsche umzusetzen</p>
+        </div>
+
+        <div class="inquiry-categories">
+            <div class="inquiry-category">
+                <img src="images/geburtstagstorte.jpg" alt="Individuelle Geburtstagstorte">
+
+                <h3>Geburtstagstorten</h3>
+                <p>Individuelle Torten mit deinem Wunschgeschmack, deiner Dekoration und persönlicher Beschriftung</p>
+            </div>
+
+            <div class="inquiry-category">
+
+                <img src="images/baklava.jpg" alt="Türkische Baklava">
+
+                <h3>Baklava</h3>
+                <p>Köstliche Baklava und gemischte Platten für deine besonderen Anlässe</p>
+            </div>
+
+            <div class="inquiry-category">
+                <img src="images/suessspeisen.jpg" alt="Türkische Süßspeisen">
+
+                <h3>Türkische Süßspeisen</h3>
+                <p>Eine Auswahl traditioneller Süßspeisen für Familie, Freunde und Gäste</p>
+            </div>
+
+            <div class="inquiry-category">
+                <img src="images/gebäck.jpg" alt="Frisches Gebäck">
+
+                <h3>Gebäck & Buffets</h3>
+                <p>Verschiedene Gebäcksorten und süße Platten für Feiern und Veranstaltungen</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- BESTELLFORMULAR -->
+    <section class="inquiry-section" id="anfrage">
+        <div class="section-heading">
+            <span>BESONDERE WÜNSCHE</span>
+
+            <h2>Individuelle Bestellung & Anfrage</h2>
+            <p>Du planst einen Geburtstag, eine Hochzeit oder eine Feier? Wir melden uns bei dir und besprechen mit dir die Details</p>
+        </div>
+
+        <form class="inquiry" id="inquiryForm">
+            <h3>Deine Kontaktdaten</h3>
+            
+            <div class="form-grid">
+                <label>Vor- und Nachname * <input type="text" name="name" autocomplete="name" required></label>
+                <label>E-Mail-Adresse * <input type="email" name="email" autocomplete="email" required></label>
+                <label>Telefonnummer * <input type="tel" name="phone" autocomplete="tel" required></label>
+
+                <label>Anlass *
+                    <select name="occasion" required>
+                        <option value="">Bitte auswählen</option>
+                        <option>Geburtstag</option>
+                        <option>Hochzeit</option>
+                        <option>Verlobung</option>
+                        <option>Taufe / Babyparty</option>
+                        <option>Firmenfeier</option>
+                        <option>Familienfeier</option>
+                        <option>Sonstiges</option>
+                    </select>
+                </label>
+
+                <label>Gewünschtes Produkt *
+                    <select name="product" required>
+                        <option value="">Bitte auswählen</option>
+                        <option>Geburtstagstorte</option>
+                        <option>Fototorte</option>
+                        <option>Herztorte</option>
+                        <option>Mini-Torten</option>
+                        <option>Baklava</option>
+                        <option>Türkische Süßspeisen</option>
+                        <option>Gemischtes Buffet</option>
+                        <option>Gebäck</option>
+                        <option>Sonstiges</option>
+                    </select>
+                </label>
+
+                <label>Gewünschtes Datum * <input type="date" name="date" id="eventDate" required></label>
+                <label>Personenanzahl <input type="number" name="guests" min="1" placeholder="z. B. 25"></label>
+                <label>Budget <input type="text" name="budget" placeholder="z. B. 100–150 €"></label>
+            </div>
+
+            <label class="message-label">
+                Weitere Wünsche und Informationen
+
+                <textarea name="message" rows="5"
+                    placeholder="Größe, Geschmack, Farbe, Beschriftung, Motiv, Menge ..."></textarea>
+
+            </label>
+
+            <label class="privacy">
+                <input type="checkbox" name="privacy" required>
+
+                <span>Ich stimme zu, dass meine Angaben zur Bearbeitung dieser Anfrage verwendet werden. *</span>
+            </label>
+
+            <div class="inquiry-buttons">
+                <button class="submit-button" type="button" id="whatsappButton">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    Per WhatsApp anfragen
+                </button>
+
+                <button class="email-button" type="button" id="emailButton">
+                    <i class="fa-regular fa-envelope"></i>
+                    Per E-Mail anfragen
+                </button>
+            </div>
+
+            <p class="form-hint">* Pflichtfelder
+                Deine Anfrage ist noch keine verbindliche Bestellung. Preis und Verfügbarkeit werden vom Café bestätigt.
+            </p>
+
+            <p id="formMessage" class="form-message" role="status" aria-live="polite"></p>
+        </form>
+    </section>
+
+
+    <!-- RESERVIERUNG / KONTAKT -->
+    <section class="reservation-section">
+        <span>WIR FREUEN UNS AUF DICH</span>
+
+        <h2>Du hast noch Fragen?</h2>
+
+        <p>Wir beraten dich gerne persönlich und helfen dir, die passende Auswahl für deinen besonderen Anlass zu finden</p>
+
+        <a href="kontakt.html" class="btn">Kontakt aufnehmen</a>
+    </section>
+</main>
+
+<div id="footer"></div>
+<script src="js/inquiry.js"></script>
+</body>
+</html>

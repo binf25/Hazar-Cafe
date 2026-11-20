@@ -9,170 +9,114 @@
 </head>
 <body>
     <header>
-        <img src="images/" alt="Hazar-Café" width="350">
+        <img src="images/logo.jpeg" alt="Hazar-Café" class="logo">
 
-        <button class="menu-toggle" aria-label="Menü öffnen">
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Menü öffnen" aria-expanded="false">
             <i class="fa-solid fa-bars"></i>
         </button>
 
-        <nav>
-            <a href="index.html">Home</a>
+        <nav id="mainNav">
+            <a href="index.html">Startseite</a>
             <a href="speisekarte.html" class="active">Speisekarte</a>
             <a href="galerie.html">Galerie</a>
             <a href="aboutUs.html">Über uns</a>
+            <a href="bestellen.html">Bestellen</a>
             <a href="kontakt.html">Kontakt</a>
             <a href="reservierung.html" class="nav-button">Reservieren</a>
         </nav>
     </header>
 
+    <!-- HAUPTINHALT -->
     <main>
+        <!-- HERO-BEREICH -->
         <section class="page-hero">
             <div>
-                <span class="section-label">UNSERE SPEISEKARTE</span>
+                <span class="hero-label">WILLKOMMEN BEI HAZAR CAFÉ</span>
                 
-                <h1>Etwas Leckeres für jeden Moment</h1>
-                <p>Frischer Kaffee, hausgemachte Kuchen und leckere Frühstücksideen</p>
+                <h1>Unsere Speisekarte</h1>
+                <p>
+                    Entdecke unsere Auswahl an hausgemachten Torten, türkischen Süßspeisen, Baklava, 
+                    frischem Gebäck und köstlichen Getränken
+                </p>
             </div>
         </section>
 
+        <!-- SPEISEKARTE -->
         <section class="menu-section">
-            <div class="section-heading">
-                <span>KAFFEE</span>
-                <h2>Frisch aufgebrüht</h2>
+            <!-- KATEGORIE-ÜBERSICHT -->
+            <div class="section-heading" id="categoryHeading">
+                <span>UNSERE SPEZIALITÄTEN</span>
+                
+                <h2>Was darf es sein?</h2>
+                <p>Von süßen Köstlichkeiten bis zu erfrischenden Getränken entdecke unser Angebot</p>
             </div>
 
-            <div class="menu-list">
-                <div class="menu-item">
-                    <div>
-                        <h3>Espresso</h3>
-                        <p>Kräftiger Espresso, frisch zubereitet</p>
+            <!-- Kategorien werden durch JavaScript eingefügt -->
+            <div class="menu-grid" id="categories"></div>
+            
+            <!-- PRODUKTANSICHT -->
+            <div id="productView" hidden>
+                <div class="product-heading">
+                    <div class="section-heading">
+                        <span>HAZAR CAFÉ</span>
+                    
+                        <h2 id="categoryTitle"></h2>
+                        <p id="categoryDescription"></p>
                     </div>
-                    <span>€ 2,90</span>
                 </div>
 
-                <div class="menu-item">
-                    <div>
-                        <h3>Cappuccino</h3>
-                        <p>Espresso mit cremigem Milchschaum</p>
-                    </div>
-                    <span>€ 3,50</span>
-                </div>
+                <!-- Produkte werden durch JavaScript eingefügt -->
+                <div class="menu-list" id="productList"></div>
 
-                <div class="menu-item">
-                    <div>
-                        <h3>Latte Macchiato</h3>
-                        <p>Espresso mit warmer Milch und Milchschaum</p>
-                    </div>
-                    <span>€ 3,90</span>
-                </div>
-
-                <div class="menu-item">
-                    <div>
-                        <h3>Americano</h3>
-                        <p>Espresso mit heißem Wasser</p>
-                    </div>
-                    <span>€ 3,20</span>
+                <div class="back-to-overview">
+                    <button class="btn btn-outline" id="backButton" type="button">
+                        Zurück zur Übersicht
+                    </button>
                 </div>
             </div>
         </section>
 
+        <!-- INDIVIDUELLE BESTELLUNGEN -->
+        <section class="reservation-section">
+            <span>FÜR BESONDERE ANLÄSSE</span>
 
-        <section class="menu-section">
-            <div class="section-heading">
-                <span>KUCHEN & TORTEN</span>
-                <h2>Hausgemacht schmeckt besser</h2>
-            </div>
+            <h2>Ein besonderer Moment verdient eine besondere Torte</h2>
+            <p>
+                Ob Geburtstag, Hochzeit oder Familienfeier - wir helfen dir gerne bei individuellen 
+                Torten und größeren Bestellungen
+            </p>
 
-            <div class="menu-list">
-                <div class="menu-item">
-                    <div>
-                        <h3>Schokoladenkuchen</h3>
-                        <p>Saftiger Schokoladenkuchen mit feiner Glasur</p>
-                    </div>
-                    <span>€ 3,50</span>
-                </div>
-
-                <div class="menu-item">
-                    <div>
-                        <h3>Käsekuchen</h3>
-                        <p>Cremiger Käsekuchen nach Hausrezept</p>
-                    </div>
-                    <span>€ 3,80</span>
-                </div>
-
-                <div class="menu-item">
-                    <div>
-                        <h3>Saisonaler Kuchen</h3>
-                        <p>Jeden Tag eine wechselnde Spezialität</p>
-                    </div>
-                    <span>€ 3,90</span>
-                </div>
-            </div>
+            <a href="kontakt.html" class="btn">Jetzt anfragen</a>
         </section>
 
+        <!-- ALLERGENINFORMATION -->
+        <section class="allergen-info">
+            <h2>Allergeninformation</h2>
+            <p>
+                A – Glutenhaltiges Getreide · 
+                B – Krebstiere · 
+                C – Ei · 
+                D – Fisch ·
+                E – Erdnuss · 
+                F – Soja · 
+                G – Milch oder Laktose ·
+                H – Schalenfrüchte ·
+                L – Sellerie · 
+                M – Senf · 
+                N – Sesam · 
+                O – Sulfite · 
+                P – Lupinen ·
+                R – Weichtiere.
+            </p>
 
-        <section class="menu-section">
-            <div class="section-heading">
-                <span>FRÜHSTÜCK</span>
-                <h2>Gut in den Tag starten</h2>
-            </div>
-
-            <div class="menu-list">
-                <div class="menu-item">
-                    <div>
-                        <h3>Klassisches Frühstück</h3>
-                        <p>Brot, Gebäck, Butter, Marmelade und Kaffee</p>
-                    </div>
-                    <span>€ 7,90</span>
-                </div>
-
-                <div class="menu-item">
-                    <div>
-                        <h3>Hazar-Frühstück</h3>
-                        <p>Auswahl an Brot, Aufstrichen, Käse und frischen Zutaten</p>
-                    </div>
-                    <span>€ 10,90</span>
-                </div>
-            </div>
-        </section>
-
-
-        <section class="menu-section">
-            <div class="section-heading">
-                <span>GETRÄNKE</span>
-                <h2>Etwas Erfrischendes</h2>
-            </div>
-
-            <div class="menu-list">
-                <div class="menu-item">
-                    <div>
-                        <h3>Hausgemachte Limonade</h3>
-                        <p>Frisch zubereitete Limonade</p>
-                    </div>
-                    <span>€ 3,80</span>
-                </div>
-
-                <div class="menu-item">
-                    <div>
-                        <h3>Tee</h3>
-                        <p>Verschiedene Sorten zur Auswahl</p>
-                    </div>
-                    <span>€ 2,80</span>
-                </div>
-
-                <div class="menu-item">
-                    <div>
-                        <h3>Orangensaft</h3>
-                        <p>Fruchtig und frisch</p>
-                    </div>
-                    <span>€ 3,50</span>
-                </div>
-            </div>
+            <p>
+                Bei Fragen zu Allergenen oder möglichen Kreuzkontakten wende dich
+                bitte direkt an unser Team
+            </p>
         </section>
     </main>
 
-
     <div id="footer"></div>
-    <script src="script.js"></script>
+    <script src="js/product.js"></script>
 </body>
 </html>

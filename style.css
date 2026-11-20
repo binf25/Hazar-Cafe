@@ -74,6 +74,12 @@ header {
 }
 
 .logo {
+    /*color: var(--green);
+    font-size: 27px;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: 1px;
+    */
     width: 180px;
     height: auto;
     object-fit: contain;
@@ -457,6 +463,207 @@ section {
     font-weight: 700;
     color: var(--primary);
     white-space: nowrap;
+}
+
+.back-to-overview {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 35px auto 50px;
+}
+
+.back-to-overview .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto;
+    position: static;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* ALLERGENINFORMATION */
+.allergen-info {
+    max-width: 1100px;
+    margin: 60px auto 40px;
+    padding: 30px 35px;
+    background: #faf7f2;
+    border: 1px solid #eadfce;
+    border-left: 4px solid #b58a52;
+    border-radius: 12px;
+}
+
+.allergen-info h2 {
+    font-size: 22px;
+    color: #4a3525;
+    margin-bottom: 18px;
+}
+
+.allergen-info p {
+    font-size: 14px;
+    line-height: 1.9;
+    color: #62584e;
+    margin-bottom: 14px;
+}
+
+.allergen-info p:last-child {
+    margin-bottom: 0;
+    padding-top: 12px;
+    border-top: 1px solid #e8dece;
+    font-style: italic;
+}
+
+
+/* =========================
+   BESTELLFORMULAR
+========================= */
+.inquiry-section {
+    padding: 80px 6%;
+    background: var(--white);
+}
+
+.inquiry {
+    max-width: 900px;
+    margin: auto;
+    padding: 35px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.inquiry-categories {
+    max-width: 1200px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.inquiry-category {
+    background: #fff;
+    padding: 25px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.inquiry-category img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+    border-radius: 14px;
+}
+
+.inquiry-category h3 {
+    margin: 18px 12px 10px;
+}
+
+.inquiry-category p {
+    padding: 0 15px 20px;
+    line-height: 1.7;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+
+.inquiry label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.inquiry input,
+.inquiry select,
+.inquiry textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: white;
+    color: var(--text);
+    font: inherit;
+}
+
+.inquiry input:focus,
+.inquiry select:focus,
+.inquiry textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(85,122,93,0.12);
+}
+
+.message-label {
+    margin-top: 22px;
+}
+
+.privacy {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start;
+    gap: 10px !important;
+    margin: 22px 0;
+    font-weight: normal !important;
+}
+
+.privacy input {
+    width: auto;
+    margin-top: 4px;
+}
+
+.inquiry-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.inquiry-buttons button {
+    flex: 1;
+    min-width: 220px;
+    padding: 14px 18px;
+    border: none;
+    border-radius: 9px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.submit-button {
+    background: #557a5d;
+    color: white;
+}
+
+.submit-button:hover {
+    background: #34533d;
+}
+
+.email-button {
+    background: white;
+    color: var(--primary-dark);
+    border: 1px solid var(--border) !important;
+}
+
+.email-button:hover {
+    background: var(--primary-light);
+}
+
+.form-hint,
+.form-message {
+    margin-top: 18px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
 }
 
 
@@ -1117,6 +1324,10 @@ footer a:hover {
         font-size: 36px;
     }
 
+    .inquiry-categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .about-section,
     .special-section {
         grid-template-columns: 1fr;
@@ -1222,6 +1433,50 @@ footer a:hover {
 
     .section-heading h2 {
         font-size: 30px;
+    }
+
+    .allergen-info {
+        margin: 35px 16px 25px;
+        padding: 22px 20px;
+    }
+
+    .allergen-info h2 {
+        font-size: 19px;
+    }
+
+    .allergen-info p {
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    .inquiry {
+        padding: 22px 16px;
+    }
+
+    .inquiry-categories {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .inquiry-category img {
+        height: 150px;
+    }
+
+    .inquiry-category h3 {
+        font-size: 16px;
+    }
+
+    .inquiry-category p {
+        font-size: 13px;
+        padding: 0 10px 15px;
+    }
+
+    .inquiry-buttons {
+        flex-direction: column;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
     }
 
     .about-content h2,

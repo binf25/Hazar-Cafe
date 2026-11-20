@@ -9,17 +9,18 @@
 </head>
 <body>
     <header>
-        <img src="images/" alt="Hazar-Café" width="350">
+        <img src="images/logo.jpeg" alt="Hazar-Café" class="logo">
 
-        <button class="menu-toggle" aria-label="Menü öffnen">
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Menü öffnen" aria-expanded="false">
             <i class="fa-solid fa-bars"></i>
         </button>
 
-        <nav>
-            <a href="index.html">Home</a>
+        <nav id="mainNav">
+            <a href="index.html">Startseite</a>
             <a href="speisekarte.html">Speisekarte</a>
             <a href="galerie.html" class="active">Galerie</a>
             <a href="aboutUs.html">Über uns</a>
+            <a href="bestellen.html">Bestellen</a>
             <a href="kontakt.html">Kontakt</a>
             <a href="reservierung.html" class="nav-button">Reservieren</a>
         </nav>
@@ -68,6 +69,6 @@
 
 
     <div id="footer"></div>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
