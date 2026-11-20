@@ -1,7 +1,7 @@
 const products = {
     torten: {
         name: "Torten & Kuchen",
-        icon: "🎂",
+        image: "images/produkte/torten.jpg",
         description: "Unsere Torten und Kuchen für besondere Anlässe",
         items: [
             ["Fruchttorten", "€ 6,00 / Stk."],
@@ -27,7 +27,7 @@ const products = {
 
     suessspeisen: {
         name: "Türkische Süßspeisen",
-        icon: "🍮",
+        image: "images/produkte/süssspeisen.jpg",
         description: "Traditionelle türkische Desserts",
         items: [
             ["Traliçe Sorten", "€ 4,30 / Stk."],
@@ -47,7 +47,7 @@ const products = {
 
     baklava: {
         name: "Baklava",
-        icon: "🥮",
+        image: "images/produkte/baklava.jpg",
         description: "Traditionelle Baklava-Spezialitäten",
         items: [
             ["Baklava mit Nuss", "€ 28,00 / kg"],
@@ -66,7 +66,7 @@ const products = {
 
     gebaeck: {
         name: "Frisches Gebäck",
-        icon: "🥐",
+        image: "images/produkte/gebäck.jpg",
         description: "Herzhaftes und süßes Gebäck",
         items: [
             ["Sesamring / Simit", "€ 1,80 / Stk."],
@@ -89,7 +89,7 @@ const products = {
 
     warme: {
         name: "Warme Getränke",
-        icon: "☕",
+        image: "images/produkte/warm-getränke.jpg",
         description: "Kaffee, Tee und Heißgetränke",
         items: [
             ["Melange", "€ 4,20"],
@@ -106,7 +106,7 @@ const products = {
 
     kalte: {
         name: "Kalte Getränke",
-        icon: "🥤",
+        image: "images/produkte/kalt-getränke.jpg",
         description: "Erfrischende Getränke und Softdrinks",
         items: [
             ["Red Bull 0,25 l", "€ 3,00"],
@@ -145,13 +145,20 @@ function renderCategories() {
         card.className = "menu-card";
 
         card.innerHTML = `
-            <div class="menu-icon">${category.icon}</div>
+            <img
+                src="${category.image}"
+                alt="${category.name}"
+                class="menu-category-image"
+                loading="lazy"
+            >
+
             <h3>${category.name}</h3>
             <p>${category.description}</p>
             <button class="btn" type="button">Produkte ansehen</button>
         `;
 
-        card.querySelector("button").addEventListener("click", () => {
+        card.querySelector("button").addEventListener("click", (event) => {
+            event.stopPropagation();
             showProducts(key);
         });
 

@@ -7,7 +7,7 @@ const formMessage = document.getElementById("formMessage");
 
 // HIER DEINE ECHTEN KONTAKTDATEN EINTRAGEN
 const whatsappNumber = "436601234567";
-const emailAddress = "info@hazar-cafe.at";
+const emailAddress = "info@hazarcafe.at";
 
 function getInquiryText() {
     const data = new FormData(form);
@@ -52,7 +52,7 @@ whatsappButton.addEventListener("click", () => {
 });
 
 emailButton.addEventListener("click", () => {
-    if (!validateForm()) return;
+    if (!validateForm()) return; 
 
     const subject = encodeURIComponent(
         "Bestellanfrage – Hazar Café"
